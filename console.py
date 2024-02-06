@@ -21,6 +21,15 @@ class HBNBCommand(cmd.Cmd):
     """ HBNH console """
     prompt = '(hbnb) '
 
+    def postcmd(self, stop, line):
+        """ Executed after each command"""
+        print()
+        return stop
+
+    def do_exit(self, arg):
+        """Exit the console"""
+        return True
+
     def do_EOF(self, arg):
         """Exits console"""
         return True
